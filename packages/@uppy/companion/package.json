@@ -1,15 +1,15 @@
 {
-  "name": "@uppy/companion",
-  "version": "3.2.0",
-  "description": "OAuth helper and remote fetcher for Uppy's (https://uppy.io) extensible file upload widget with support for drag&drop, resumable uploads, previews, restrictions, file processing/encoding, remote providers like Dropbox and Google Drive, S3 and more :dog:",
+  "name": "@emela/companion-dev",
+  "version": "0.0.1",
+  "description": "Dev",
   "main": "lib/companion.js",
   "types": "lib/companion.d.ts",
   "author": "Transloadit.com",
   "license": "ISC",
-  "homepage": "https://github.com/transloadit/uppy#readme",
+  "homepage": "https://github.com/marton-laszlo-attila/uppydev#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/transloadit/uppy.git"
+    "url": "git+https://github.com/marton-laszlo-attila/uppydev.git"
   },
   "keywords": [
     "file uploader",
@@ -26,7 +26,9 @@
     "express",
     "realtime"
   ],
-  "bin": "./bin/companion",
+  "bin": {
+    "companion-dev": "bin/companion"
+  },
   "dependencies": {
     "@purest/providers": "1.0.1",
     "atob": "2.1.2",
@@ -108,7 +110,7 @@
   "scripts": {
     "build": "tsc -p .",
     "deploy": "kubectl apply -f infra/kube/companion-kube.yml",
-    "prepublishOnly": "yarn run build",
+    "xprepublishOnly": "yarn run build",
     "start": "node ./lib/standalone/start-server.js",
     "test": "bash -c 'source env.test.sh && ../../../node_modules/jest/bin/jest.js'",
     "test:watch": "yarn test -- --watch"
@@ -118,5 +120,11 @@
   },
   "installConfig": {
     "hoistingLimits": "workspaces"
+  },
+  "bugs": {
+    "url": "https://github.com/marton-laszlo-attila/uppydev/issues"
+  },
+  "directories": {
+    "test": "test"
   }
 }
